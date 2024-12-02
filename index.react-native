@@ -1,0 +1,58 @@
+import React, { useState, useEffect } from 'react';
+import{view, Text,image, StatusBar, TextInput, TouchableOpacity} from 'react-native';
+
+const Login = () => {
+    const[email, setEmail]= useState('');
+    const[password, setPassword]= useState('');
+    return (
+    <view style={{flex:1, background:'#3e4452'}}>
+    <StatusBar backgroundColor={'3e4452'} barStyle={"light-content"} />
+       <view style={{justifyContent: 'center', alignItems: 'center'}}>
+       <image source={require('./src/Image/cute robot.png')}
+        style={{width:100,height:100}}
+        />
+        <Text style={{fontSize:20,fontStyle:'bold'}}>
+        <Text style={{color:'#ffd900'}}>ROBOTECHNO</Text>
+        </Text>  
+        <Text style={{marginTop: 10, fontWeight: 'bold'}}>Login</Text> 
+        <TextInput value='{email}' />
+        <TextInput value='{password}' />
+      </view>
+      <TextInput value={email} 
+                 style={{
+                    backgroundColor:'#ffffff',
+                    marginHorizontal:20, 
+                    borderRadius:15
+      }} 
+       placeholder='Masukan Email' 
+       onChangeText={text =>setEmail(text)}
+      />
+      <TextInput value={password} 
+                 style={{
+                    backgroundColor:'#ffffff',
+                    marginHorizontal:20, 
+                    borderRadius:15
+      }} 
+      placeholder='Masukan password' 
+      onChangeText={text =>setPassword(text)}
+      secureTextEntry={true}
+      />
+
+      <TouchableOpacity 
+      style ={{
+        backgroundColor: '#ffd900',
+        paddingVertical: 14,
+        marginTop:20,
+        marginHorizontal: 20,
+        borderRadius: 15,
+        elevation:2,
+      }}>
+        <text style={{color: '#ffffff', textAlign: 'center', fontWeight: 'bold'}}>Login</text>
+
+      </TouchableOpacity>
+  
+    </view>
+    );
+};
+
+export default Login;
